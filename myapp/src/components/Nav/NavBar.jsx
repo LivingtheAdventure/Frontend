@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
-import { FaSearch, FaHome, FaPlay, FaFilm, FaRunning } from 'react-icons/fa';
+import {
+    FaHome,
+    FaSuitcaseRolling,
+    FaHiking,
+    FaCampground,
+    FaMountain,
+    FaTree,
+    FaUserCircle // Changed from FaSignInAlt to FaUserCircle
+} from 'react-icons/fa';
 
-// Side navigation icon component
+// Side navigation icon component (No changes made here)
 const NavLink = ({ icon, label, onHover }) => (
     <div
         className="relative flex justify-center items-center w-full group"
@@ -22,39 +30,49 @@ function NavBar() {
 
     return (
         <>
-            {/* Overlay on nav hover */}
+            {/* Overlay on nav hover (No changes made here) */}
             <div
                 className={`fixed inset-0 z-10 pointer-events-none transition-opacity duration-300 ${showOverlay ? 'opacity-60 bg-black' : 'opacity-0'}`}
             />
-            <div className="fixed top-0 left-0 h-full w-16  z-20 flex flex-col justify-center items-center py-4 space-y-2">
-                {/* Logo */}
-                <div className="text-blue-500 w-10 h-10 flex items-center justify-center">
-                    <FaPlay className="w-8 h-8" />
-                </div>
 
-                <NavLink
-                    icon={<FaSearch className="h-6 w-6" />}
-                    label="Search"
-                    onHover={setShowOverlay}
-                />
+            {/* Main Navbar Container */}
+            <div className="fixed top-0 left-0 h-full w-16 z-20 flex flex-col justify-center items-center py-4 space-y-2">
+
+                {/* --- NAVIGATION LINKS --- */}
                 <NavLink
                     icon={<FaHome className="h-6 w-6" />}
                     label="Home"
                     onHover={setShowOverlay}
                 />
                 <NavLink
-                    icon={<FaPlay className="h-6 w-6" />}
-                    label="TV"
+                    icon={<FaSuitcaseRolling className="h-6 w-6" />}
+                    label="Trips"
                     onHover={setShowOverlay}
                 />
                 <NavLink
-                    icon={<FaFilm className="h-6 w-6" />}
-                    label="Movies"
+                    icon={<FaHiking className="h-6 w-6" />}
+                    label="Treks"
                     onHover={setShowOverlay}
                 />
                 <NavLink
-                    icon={<FaRunning className="h-6 w-6" />}
-                    label="Sports"
+                    icon={<FaCampground className="h-6 w-6" />}
+                    label="Adventure Activity"
+                    onHover={setShowOverlay}
+                />
+                <NavLink
+                    icon={<FaMountain className="h-6 w-6" />}
+                    label="Peak Expedition"
+                    onHover={setShowOverlay}
+                />
+                <NavLink
+                    icon={<FaTree className="h-6 w-6" />}
+                    label="Park Development and Design"
+                    onHover={setShowOverlay}
+                />
+                {/* --- MODIFIED LINK BELOW --- */}
+                <NavLink
+                    icon={<FaUserCircle className="h-6 w-6" />} // Icon changed to a profile icon
+                    label="Profile" // Hover label changed from "Login"
                     onHover={setShowOverlay}
                 />
             </div>

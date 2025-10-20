@@ -66,7 +66,7 @@ function ADVSlider({ movies }) {
                     ) : (
                         <video
                             key={videoKey}
-                            className="w-full h-full object-cover"
+                            className="w-full min-h-screen object-cover"
                             autoPlay
                             muted={!audioOn}
                             loop={false}
@@ -80,9 +80,6 @@ function ADVSlider({ movies }) {
 
                     {/* Left-to-right gradient (for text visibility) */}
                     <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-transparent"></div>
-
-                    {/* 🔥 Bottom gradient (fade to black for Event section) */}
-
                 </div>
             </div>
 
@@ -141,9 +138,10 @@ function ADVSlider({ movies }) {
                     </div>
                 </div>
             </div>
-            <div className="relative z-20  bg-gradient-to-b from-transparent via-black/100 to-black">
+            <div className="relative z-20 bg-gradient-to-b from-transparent from-1% via-black/100 via-20% to-black to-70%">
                 <Event />
             </div>
+
         </>
     );
 }

@@ -18,7 +18,7 @@ const EventCard = ({ item }) => {
         if (details) return;
         setIsLoading(true);
         try {
-            const response = await fetch(`http://localhost:8000/events/get/${item.id}`);
+            const response = await fetch(`http://localhost:8000/events/${item.id}`);
             const data = await response.json();
             setDetails(data);
         } catch (error) {
