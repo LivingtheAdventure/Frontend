@@ -9,7 +9,7 @@ const Event = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get("http://localhost:8000/events/?skip=0&limit=50");
+                const response = await axios.get("https://backend-theta-seven-48.vercel.app/events/?skip=0&limit=50");
                 setEvents(response.data);
             } catch (error) {
                 console.error("Error fetching events:", error);

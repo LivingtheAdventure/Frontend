@@ -445,13 +445,13 @@ function EventDetails() {
         const fetchEventAndSchedule = async () => {
             setLoading(true);
             try {
-                const resEvent = await fetch(`http://localhost:8000/events/${id}`);
+                const resEvent = await fetch(`https://backend-theta-seven-48.vercel.app/events/${id}`);
                 if (!resEvent.ok) throw new Error('Event not found');
                 const eventData = await resEvent.json();
                 setEvent(eventData);
 
                 if (eventData.event_id) {
-                    const resSchedule = await fetch(`http://localhost:8000/event-schedules/by-event/${eventData.event_id}`);
+                    const resSchedule = await fetch(`https://backend-theta-seven-48.vercel.app/event-schedules/by-event/${eventData.event_id}`);
                     if (resSchedule.ok) {
                         const scheduleData = await resSchedule.json();
                         if (Array.isArray(scheduleData) && scheduleData.length > 0) {

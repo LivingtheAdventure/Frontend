@@ -9,7 +9,7 @@ function Hero() {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch('http://localhost:8000/heroes/?skip=0&limit=50', {
+                const response = await fetch('https://backend-theta-seven-48.vercel.app/heroes/?skip=0&limit=50', {
                     headers: { 'Accept': 'application/json' },
                     credentials: 'include',
                 });
