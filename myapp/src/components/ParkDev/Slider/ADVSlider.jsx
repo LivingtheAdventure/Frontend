@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Event from '../Events/Main/Event';
+import Event from './Event';
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
-import BestOfTheYearEvent from '../Events/Main/BestOfTheYear';
 
 // helper: check if URL is YouTube
 const isYouTube = (url) => /youtube\.com|youtu\.be/.test(url);
@@ -18,6 +17,7 @@ function ADVSlider({ movies }) {
     const [videoKey, setVideoKey] = useState(Date.now());
     const [audioOn, setAudioOn] = useState(false);
     const [fade, setFade] = useState(false);
+    const [showSectionName, setShowSectionName] = useState(false);
 
     // Find current index for looping
     const currentIndex = movies.findIndex(m => m.id === activeMovie.id);
@@ -41,6 +41,7 @@ function ADVSlider({ movies }) {
         }, 300);
     };
 
+    const toggleAudio = () => setAudioOn(a => !a);
 
     return (
         <>

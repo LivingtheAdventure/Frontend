@@ -1,14 +1,19 @@
 import NavBar from '../Nav/NavBar';
 import Hero from '../Hero/Hero';
+import Footer from '../Footer/Footer';
 
 
 function Home() {
     return (
         <main className="flex-1 flex flex-col">
-            <div className="sticky top-0 z-30">
+            <div className="sticky top-0 z-40">
                 <NavBar />
             </div>
-            <Hero />
+            <Hero heroType='home' className="z-20 mb-10" />
+            <div className="z-30">
+                <hr className='text-gray-600' />
+                <Footer />
+            </div>
 
         </main>
     );

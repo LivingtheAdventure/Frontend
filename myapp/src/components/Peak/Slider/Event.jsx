@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import EventCollection from "../Roller/EventCollection";
+import EventCollection from "./EventCollection";
 import axios from "axios";
 
 const Event = () => {
@@ -9,7 +9,7 @@ const Event = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get("https://backend-theta-seven-48.vercel.app/events/?skip=0&limit=50");
+                const response = await axios.get("https://backend-theta-seven-48.vercel.app/events/by-type/Peak Expedition");
                 setEvents(response.data);
             } catch (error) {
                 console.error("Error fetching events:", error);
@@ -24,7 +24,7 @@ const Event = () => {
     if (loading) return <div className="text-white text-center mt-20">Loading events...</div>;
 
     return (
-        <div className="font-sans ml-20 mt-4 pb-20">
+        <div className="  min-h-screen font-sans ml-20 mt-4">
             <EventCollection data={events} />
         </div>
     );
